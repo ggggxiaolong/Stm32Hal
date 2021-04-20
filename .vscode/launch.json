@@ -7,7 +7,7 @@
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/${workspaceFolderBasename}.elf",
+            "executable": "${workspaceRoot}/build/Demo.elf",
             "request": "launch",
             "device": "STM32F407VE",
             "svdFile": "./STM32F407.svd",

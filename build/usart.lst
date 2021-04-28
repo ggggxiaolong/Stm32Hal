@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccAxlZXA.s 			page 1
+ARM GAS  /tmp/ccmniOvT.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
   28:Src/usart.c   **** 
   29:Src/usart.c   **** /* USART1 init function */
   30:Src/usart.c   **** 
-ARM GAS  /tmp/ccAxlZXA.s 			page 2
+ARM GAS  /tmp/ccmniOvT.s 			page 2
 
 
   31:Src/usart.c   **** void MX_USART1_UART_Init(void)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
   65              		.loc 1 48 28 is_stmt 0 view .LVU16
   66 001c C361     		str	r3, [r0, #28]
   49:Src/usart.c   ****   if (HAL_UART_Init(&huart1) != HAL_OK)
-ARM GAS  /tmp/ccAxlZXA.s 			page 3
+ARM GAS  /tmp/ccmniOvT.s 			page 3
 
 
   67              		.loc 1 49 3 is_stmt 1 view .LVU17
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
  111              	.LCFI2:
  112              		.cfi_def_cfa_offset 40
   61:Src/usart.c   **** 
-ARM GAS  /tmp/ccAxlZXA.s 			page 4
+ARM GAS  /tmp/ccmniOvT.s 			page 4
 
 
   62:Src/usart.c   ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
  141              		.cfi_restore_state
   69:Src/usart.c   **** 
  142              		.loc 1 69 5 is_stmt 1 view .LVU31
-ARM GAS  /tmp/ccAxlZXA.s 			page 5
+ARM GAS  /tmp/ccmniOvT.s 			page 5
 
 
  143              	.LBB2:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
  182 0058 0223     		movs	r3, #2
  183 005a 0493     		str	r3, [sp, #16]
   78:Src/usart.c   ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-ARM GAS  /tmp/ccAxlZXA.s 			page 6
+ARM GAS  /tmp/ccmniOvT.s 			page 6
 
 
  184              		.loc 1 78 5 is_stmt 1 view .LVU47
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
   92:Src/usart.c   ****   if(uartHandle->Instance==USART1)
  230              		.loc 1 92 3 is_stmt 1 view .LVU57
  231              		.loc 1 92 16 is_stmt 0 view .LVU58
-ARM GAS  /tmp/ccAxlZXA.s 			page 7
+ARM GAS  /tmp/ccmniOvT.s 			page 7
 
 
  232 0002 0268     		ldr	r2, [r0]
@@ -415,124 +415,49 @@ ARM GAS  /tmp/ccAxlZXA.s 			page 1
  262 002c 00000240 		.word	1073872896
  263              		.cfi_endproc
  264              	.LFE132:
- 266              		.section	.text.__io_putchar,"ax",%progbits
- 267              		.align	1
- 268              		.global	__io_putchar
-ARM GAS  /tmp/ccAxlZXA.s 			page 8
+ 266              		.global	huart1
+ 267              		.section	.bss.huart1,"aw",%nobits
+ 268              		.align	2
+ARM GAS  /tmp/ccmniOvT.s 			page 8
 
 
- 269              		.syntax unified
- 270              		.thumb
- 271              		.thumb_func
- 272              		.fpu fpv4-sp-d16
- 274              	__io_putchar:
- 275              	.LVL12:
- 276              	.LFB133:
- 111:Src/usart.c   **** 
- 112:Src/usart.c   **** /* USER CODE BEGIN 1 */
- 113:Src/usart.c   **** #ifdef __GNUC__
- 114:Src/usart.c   **** /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
- 115:Src/usart.c   ****      set to 'Yes') calls __io_putchar() */
- 116:Src/usart.c   **** #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
- 117:Src/usart.c   **** #else
- 118:Src/usart.c   **** #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
- 119:Src/usart.c   **** #endif /* __GNUC__ */
- 120:Src/usart.c   **** /**
- 121:Src/usart.c   ****   * @brief  Retargets the C library printf function to the USART.
- 122:Src/usart.c   ****   * @param  None
- 123:Src/usart.c   ****   * @retval None
- 124:Src/usart.c   ****   */
- 125:Src/usart.c   **** PUTCHAR_PROTOTYPE
- 126:Src/usart.c   **** {
- 277              		.loc 1 126 1 is_stmt 1 view -0
- 278              		.cfi_startproc
- 279              		@ args = 0, pretend = 0, frame = 8
- 280              		@ frame_needed = 0, uses_anonymous_args = 0
- 281              		.loc 1 126 1 is_stmt 0 view .LVU66
- 282 0000 00B5     		push	{lr}
- 283              	.LCFI6:
- 284              		.cfi_def_cfa_offset 4
- 285              		.cfi_offset 14, -4
- 286 0002 83B0     		sub	sp, sp, #12
- 287              	.LCFI7:
- 288              		.cfi_def_cfa_offset 16
- 289 0004 0190     		str	r0, [sp, #4]
- 127:Src/usart.c   ****   /* Place your implementation of fputc here */
- 128:Src/usart.c   ****   /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
- 129:Src/usart.c   ****   HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xffff);
- 290              		.loc 1 129 3 is_stmt 1 view .LVU67
- 291 0006 4FF6FF73 		movw	r3, #65535
- 292 000a 0122     		movs	r2, #1
- 293 000c 01A9     		add	r1, sp, #4
- 294 000e 0348     		ldr	r0, .L21
- 295              	.LVL13:
- 296              		.loc 1 129 3 is_stmt 0 view .LVU68
- 297 0010 FFF7FEFF 		bl	HAL_UART_Transmit
- 298              	.LVL14:
- 130:Src/usart.c   **** 
- 131:Src/usart.c   ****   return ch;
- 299              		.loc 1 131 3 is_stmt 1 view .LVU69
- 132:Src/usart.c   **** }
- 300              		.loc 1 132 1 is_stmt 0 view .LVU70
- 301 0014 0198     		ldr	r0, [sp, #4]
- 302 0016 03B0     		add	sp, sp, #12
- 303              	.LCFI8:
- 304              		.cfi_def_cfa_offset 4
-ARM GAS  /tmp/ccAxlZXA.s 			page 9
-
-
- 305              		@ sp needed
- 306 0018 5DF804FB 		ldr	pc, [sp], #4
- 307              	.L22:
- 308              		.align	2
- 309              	.L21:
- 310 001c 00000000 		.word	.LANCHOR0
- 311              		.cfi_endproc
- 312              	.LFE133:
- 314              		.global	huart1
- 315              		.section	.bss.huart1,"aw",%nobits
- 316              		.align	2
- 317              		.set	.LANCHOR0,. + 0
- 320              	huart1:
- 321 0000 00000000 		.space	68
- 321      00000000 
- 321      00000000 
- 321      00000000 
- 321      00000000 
- 322              		.text
- 323              	.Letext0:
- 324              		.file 2 "/usr/share/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_type
- 325              		.file 3 "/usr/share/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h"
- 326              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 327              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 328              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 329              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 330              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 331              		.file 9 "Inc/main.h"
- 332              		.file 10 "Inc/usart.h"
-ARM GAS  /tmp/ccAxlZXA.s 			page 10
+ 269              		.set	.LANCHOR0,. + 0
+ 272              	huart1:
+ 273 0000 00000000 		.space	68
+ 273      00000000 
+ 273      00000000 
+ 273      00000000 
+ 273      00000000 
+ 274              		.text
+ 275              	.Letext0:
+ 276              		.file 2 "/usr/share/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_type
+ 277              		.file 3 "/usr/share/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h"
+ 278              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 279              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 280              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 281              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 282              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 283              		.file 9 "Inc/main.h"
+ 284              		.file 10 "Inc/usart.h"
+ARM GAS  /tmp/ccmniOvT.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usart.c
-     /tmp/ccAxlZXA.s:18     .text.MX_USART1_UART_Init:0000000000000000 $t
-     /tmp/ccAxlZXA.s:26     .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
-     /tmp/ccAxlZXA.s:85     .text.MX_USART1_UART_Init:000000000000002c $d
-     /tmp/ccAxlZXA.s:91     .text.HAL_UART_MspInit:0000000000000000 $t
-     /tmp/ccAxlZXA.s:98     .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
-     /tmp/ccAxlZXA.s:205    .text.HAL_UART_MspInit:0000000000000070 $d
-     /tmp/ccAxlZXA.s:210    .text.HAL_UART_MspDeInit:0000000000000000 $t
-     /tmp/ccAxlZXA.s:217    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
-     /tmp/ccAxlZXA.s:260    .text.HAL_UART_MspDeInit:0000000000000024 $d
-     /tmp/ccAxlZXA.s:267    .text.__io_putchar:0000000000000000 $t
-     /tmp/ccAxlZXA.s:274    .text.__io_putchar:0000000000000000 __io_putchar
-     /tmp/ccAxlZXA.s:310    .text.__io_putchar:000000000000001c $d
-     /tmp/ccAxlZXA.s:320    .bss.huart1:0000000000000000 huart1
-     /tmp/ccAxlZXA.s:316    .bss.huart1:0000000000000000 $d
+     /tmp/ccmniOvT.s:18     .text.MX_USART1_UART_Init:0000000000000000 $t
+     /tmp/ccmniOvT.s:26     .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
+     /tmp/ccmniOvT.s:85     .text.MX_USART1_UART_Init:000000000000002c $d
+     /tmp/ccmniOvT.s:91     .text.HAL_UART_MspInit:0000000000000000 $t
+     /tmp/ccmniOvT.s:98     .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
+     /tmp/ccmniOvT.s:205    .text.HAL_UART_MspInit:0000000000000070 $d
+     /tmp/ccmniOvT.s:210    .text.HAL_UART_MspDeInit:0000000000000000 $t
+     /tmp/ccmniOvT.s:217    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
+     /tmp/ccmniOvT.s:260    .text.HAL_UART_MspDeInit:0000000000000024 $d
+     /tmp/ccmniOvT.s:272    .bss.huart1:0000000000000000 huart1
+     /tmp/ccmniOvT.s:268    .bss.huart1:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init
 Error_Handler
 HAL_GPIO_Init
 HAL_GPIO_DeInit
-HAL_UART_Transmit

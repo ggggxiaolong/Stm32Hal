@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.nvue": "vue",
+        "cstdio": "c",
+        "stdio.h": "c",
+        "gpio.h": "c",
+        "bsp_key.h": "c",
+        "bsp_led.h": "c",
+        "main.h": "c"
+    }
+}

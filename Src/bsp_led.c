@@ -3,7 +3,7 @@
 void LED_GPIO_Init()
 {
     //初始化时钟
-    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
     //配置引脚属性
     GPIO_InitTypeDef GPIO_Init;
     GPIO_Init.Mode = GPIO_MODE_OUTPUT_PP;    // 推挽输出

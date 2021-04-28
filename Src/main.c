@@ -19,11 +19,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "gpio.h"
+// #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "bsp_led.h"
+#include "bsp_key.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -73,7 +75,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  LED_GPIO_Init();
+  KEY_GPIO_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -84,9 +87,9 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  LED2_OFF;
+  LED1_OFF;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -94,13 +97,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    if (KEY_SCAN(KEY1_PORT, KEY1_PIN) == KEY_PRESSED)
+    {
+      LED1_TOGGLE;
+    }
+    if (KEY_SCAN(KEY2_PORT, KEY2_PIN) == KEY_PRESSED)
+    {
+      LED2_TOGGLE;
+    }
     /* USER CODE BEGIN 3 */
-    HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-    HAL_Delay(500);
-    HAL_UART_Transmit(&huart1,"Hello world! ",0xFFFF);
-    HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-    HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
@@ -135,8 +140,7 @@ void SystemClock_Config(void)
   }
   /** Initializes the CPU, AHB and APB buses clocks
   */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
@@ -167,7 +171,7 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

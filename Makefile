@@ -37,6 +37,8 @@ BUILD_DIR = build
 # C sources
 C_SOURCES =  \
 Src/main.c \
+Src/bsp_led.c \
+Src/bsp_key.c \
 Src/gpio.c \
 Src/stm32f4xx_it.c \
 Src/stm32f4xx_hal_msp.c \
